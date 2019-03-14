@@ -2,7 +2,7 @@
 #include<string.h>
 #include<malloc.h>
 
-int main()
+int main(int argc,char* argv[])
 {
 	int counter=0,index,indent,index1=0; 
 	char *c,*d; 
@@ -10,7 +10,7 @@ int main()
 	
 	FILE *fptr; 
 
-	fptr=fopen("testfile.cpp","r"); 
+	fptr=fopen(argv[1],"r"); 
 	
 	if(fptr==NULL) 
 		printf("File could not be opened.\n");
@@ -37,7 +37,7 @@ int main()
 				d[index1++]='	';
 	}
 	fclose(fptr); 
-	fptr = fopen("testfile.cpp", "w"); 
+	fptr = fopen(argv[1], "w"); 
 	fputs(d, fptr); 
 	
 	fclose(fptr); 
